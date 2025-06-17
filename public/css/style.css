@@ -1,0 +1,142 @@
+/* ---- RESET & BASE ---- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    background-color: #f6f8fa;
+    padding: 20px;
+    color: #333;
+}
+
+/* ---- CONTAINER ---- */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* ---- HEADINGS ---- */
+h1, h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* ---- LINKS ---- */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---- TABLE ---- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* ---- FORM ---- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #444;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"],
+button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #27ae60;
+}
+
+/* ---- BUTTON DANGER ---- */
+button.danger {
+    background-color: #e74c3c;
+}
+
+button.danger:hover {
+    background-color: #c0392b;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+    }
+
+    table td {
+        padding-left: 50%;
+        position: relative;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+}
