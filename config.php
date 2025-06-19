@@ -5,4 +5,5 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 
 define('BASE', '/location-voitures');
-define('ASSET', BASE . '/public/'); 
+define('ASSET', BASE . '/home'); 
+?>
