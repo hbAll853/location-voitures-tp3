@@ -9,8 +9,10 @@ abstract class CRUD extends PDO {
     protected $fillable = [];
 
     public function __construct() {
-        parent::__construct('mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8', DB_USER, DB_PASS);
-    }
+    parent::__construct('mysql:host=localhost;dbname=e2496332;charset=utf8', 'e2496332', 'PC8xNDhhjeVsvglADG6M');
+    // parent::__construct("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8",DB_USER,DB_PASS ); 
+      }
+    
 
     public function select($order='asc') {
         $sql = "SELECT * FROM {$this->table} ORDER BY {$this->primaryKey} {$order}";
@@ -59,5 +61,19 @@ abstract class CRUD extends PDO {
         $stmt = $this->prepare($sql);
         $stmt->bindValue(':id', $id);
         return $stmt->execute();
+    }
+
+      public function unique($field, $value){
+        $sql = "SELECT * FROM $this->table WHERE $field = :$field";
+        $stmt = $this->prepare($sql);
+        $stmt->bindValue(":$field", $value);
+        $stmt->execute();
+        $count = $stmt->rowCount();
+        if($count == 1){
+            return $stmt->fetch();
+        }else{
+            return false;
+        }
+
     }
 }

@@ -109,6 +109,22 @@ button.danger:hover {
     background-color: #c0392b;
 }
 
+.btn-export-pdf {
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.btn-export-pdf:hover {
+  background-color: #2563eb;
+}
+
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 600px) {
     .container {

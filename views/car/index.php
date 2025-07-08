@@ -1,4 +1,5 @@
 {{ include('./layouts/header.php', {title: 'Liste des voitures'}) }}
+
 <h1>Liste des voitures</h1>
 <a href="{{ base }}/car/create">Ajouter une voiture</a>
 <table>

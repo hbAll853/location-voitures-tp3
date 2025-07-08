@@ -5,7 +5,7 @@
     <strong class="error">{{ message }}</strong>
     
     <div class="error-actions">
-        <a href="{{ base }}/" class="btn">Retour à l'accueil</a>
+        <a href="{{ base }}/home" class="btn">Retour à l'accueil</a>
     </div>
 </div>
 

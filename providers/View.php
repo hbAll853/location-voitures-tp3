@@ -7,6 +7,7 @@ use Twig\Environment;
 class View {
     static public function render($template, $data = []){
         $loader = new FilesystemLoader('views');
+        $data['session'] = $_SESSION;
         $twig = new Environment($loader);
         $twig->addGlobal('asset', ASSET);
         $twig->addGlobal('base', BASE);

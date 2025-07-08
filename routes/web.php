@@ -5,6 +5,10 @@ use App\Controllers\CustomerController;
 use App\Controllers\EmployeeController;
 use App\Controllers\RentalController;
 use App\Controllers\HomeController;
+use App\Controllers\AuthController;
+use App\Controllers\UserController;
+use App\Providers\View;
+
 
 // Route d'accueil
 Route::get('/home', 'HomeController@index');
@@ -45,5 +49,28 @@ Route::get('/rental/edit', 'RentalController@edit');
 Route::post('/rental/update', 'RentalController@update');
 Route::post('/rental/delete', 'RentalController@delete');
 
+Route::get('/clients', 'ClientController@index');
+Route::get('/client/show', 'ClientController@show');
+Route::get('/client/create', 'ClientController@create');
+Route::post('/client/store', 'ClientController@store');
+Route::get('/client/edit', 'ClientController@edit');
+Route::post('/client/edit', 'ClientController@update');
+Route::post('/client/delete', 'ClientController@delete');
+
+Route::get('/user/create', 'UserController@create');
+Route::get('/user/journal', 'UserController@journal');
+Route::post('/user/store', 'UserController@store');
+
+Route::get('/login', 'AuthController@index');
+Route::post('/login', 'AuthController@store');
+Route::get('/logout', 'AuthController@delete');
+
+Route::get('/user/envoyer-mail', 'UserController@getMailForm');
+Route::post('/user/envoyer-mail', 'UserController@envoyerMail');
+
+Route::get('/user/journal', 'JournalController@index');
+
+
 // Dispatch
 Route::dispatch();
+

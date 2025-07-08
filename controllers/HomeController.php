@@ -6,10 +6,15 @@ use App\Models\Car;
 use App\Models\Customer;
 use App\Models\Employee;
 use App\Models\Rental;
+use App\Providers\Auth;
+use App\Providers\Logger;
 
 class HomeController {
+
     public function index() {
-        // Récupérer quelques statistiques pour la page d'accueil
+        Logger::enregistrer();
+
+        // Récupérer les statistiques
         $car = new Car();
         $customer = new Customer();
         $employee = new Employee();
@@ -26,6 +31,9 @@ class HomeController {
             'total_employees' => $totalEmployees,
             'total_rentals' => $totalRentals
         ];
+        
         return View::render('home/home', ['stats' => $stats]);
     }
+
+
 }
